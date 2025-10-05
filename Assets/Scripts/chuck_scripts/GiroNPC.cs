@@ -33,6 +33,7 @@ public class NPCGiroSoloY : MonoBehaviour
         if (other.CompareTag("Player"))
         {
             jugadorEnRango = true;
+            Debug.Log("has colisionado con Chuck");
             jugador = other.transform;
         }
     }
