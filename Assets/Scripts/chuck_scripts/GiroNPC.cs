@@ -7,6 +7,9 @@ public class NPCGiroSoloY : MonoBehaviour
     private bool jugadorEnRango = false;
     private Transform jugador;
 
+    // Referencia opcional al script de mensaje
+    [SerializeField] private MostrarMensajeInteraccion mensajeUI;
+
     void Update()
     {
         if (jugadorEnRango && Input.GetKeyDown(KeyCode.Return))
@@ -35,6 +38,13 @@ public class NPCGiroSoloY : MonoBehaviour
             jugadorEnRango = true;
             Debug.Log("has colisionado con Chuck");
             jugador = other.transform;
+
+            if (mensajeUI != null)
+            {
+                mensajeUI.MostrarMensaje("Presionar ENTER para interactuar con Chuck");
+            }
+     
+                
         }
     }
 
@@ -43,6 +53,7 @@ public class NPCGiroSoloY : MonoBehaviour
         if (other.CompareTag("Player"))
         {
             jugadorEnRango = false;
+            mensajeUI.MostrarMensaje("");
         }
     }
 }
