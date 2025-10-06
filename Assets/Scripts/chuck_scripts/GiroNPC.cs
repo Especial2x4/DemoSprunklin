@@ -41,7 +41,7 @@ public class NPCGiroSoloY : MonoBehaviour
 
             if (mensajeUI != null)
             {
-                mensajeUI.MostrarMensaje("Presionar ENTER para interactuar con Chuck");
+                mensajeUI.MostrarMensaje("Presionar ENTER para interactuar con el Chuck");
             }
      
                 
